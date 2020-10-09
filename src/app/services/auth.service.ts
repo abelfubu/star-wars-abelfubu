@@ -6,6 +6,7 @@ import { Credentials, LoginResponse, User } from '../models';
 })
 export class AuthService {
   APP_USRS = 'APP_USRS';
+  isLoggedIn = false;
   constructor() {}
 
   registerUser(user: User): void {
@@ -29,6 +30,7 @@ export class AuthService {
         (user) => user.email === email && user.password === password
       )
     ) {
+      this.isLoggedIn = true;
       return { isLoggedIn: true, message: 'Bienvenido' };
     }
     return { isLoggedIn: false, message: 'Usuario o contraseña no validos' };
