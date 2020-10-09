@@ -7,7 +7,7 @@
   <button class="dark" routerLink="/auth/register">REGISTRARME</button>
   <p
     class="error"
-    *ngIf="this.loginForm.errors.invalidCredentials && this.loginForm.touched"
+    *ngIf="this.loginForm.errors?.invalidCredentials && this.loginForm.touched"
   >
     Por favor introduce un usuario y contraseña validos
   </p>

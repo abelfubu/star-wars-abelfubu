@@ -1,0 +1,16 @@
+section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  .image {
+    height: 100vh;
+    color: white;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .content {
+    padding: 32px;
+    font-size: 1.5rem;
+  }
+}
