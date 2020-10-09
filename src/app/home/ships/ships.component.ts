@@ -18,6 +18,7 @@ export class ShipsComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchShips();
+    this.shipsService.setClearCacheInterval(1000 * 60 * 5);
   }
 
   private fetchShips(url?: string): void {
