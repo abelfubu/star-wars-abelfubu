@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "star-wars-abelfubu"
+    }
+  },
+  "defaultProject": "star-wars-abelfubu",
+  "cli": {
+    "analytics": false
+  }
 }
