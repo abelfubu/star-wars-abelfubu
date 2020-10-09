@@ -1,1 +1,19 @@
-<p>ships-single works!</p>
+<section *ngIf="ship">
+  <div
+    class="image"
+    [style.background-image]="
+      'url(' + imageUrl + '), url(' + defaultImage + ')'
+    "
+  ></div>
+  <div class="content">
+    <h2>{{ ship.name }}</h2>
+    <p>Capacidad: {{ ship.cargo_capacity }}</p>
+    <p>Consumibles: {{ ship.consumables }}</p>
+    <p>Coste en créditos: {{ ship.cost_in_credits }}</p>
+    <p>Creado: {{ ship.created | date }}</p>
+    <p>Editado: {{ ship.edited | date }}</p>
+    <p>Fabricante: {{ ship.manufacturer }}</p>
+    <p>Máxima velocidad: {{ ship.max_atmosphering_speed }}</p>
+    <button class="dark" routerLink="..">VOLVER</button>
+  </div>
+</section>
