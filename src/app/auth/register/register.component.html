@@ -1,1 +1,9 @@
-<p>register works!</p>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <h3>NUEVO USUARIO</h3>
+  <input type="text" formControlName="name" placeholder="Nombre" />
+  <input type="text" formControlName="lastName" placeholder="Apellidos" />
+  <input type="email" formControlName="email" placeholder="Email" />
+  <input type="password" formControlName="password" placeholder="Contraseña" />
+  <button class="gold">REGISTRARME</button>
+  <button class="dark" routerLink="/auth/login">YA ESTOY REGISTRADO</button>
+</form>

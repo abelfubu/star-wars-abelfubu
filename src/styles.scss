@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+@import "theme/variables";
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;700&display=swap");
+
+html,
+body {
+  font-family: "Darker Grotesque", sans-serif;
+}
+input {
+  display: block;
+  border: none;
+  border-bottom: solid $light 1px;
+  padding: 12px 18px 12px 2px;
+  width: 100%;
+  margin: 16px 0;
+
+  &:focus,
+  &:active {
+    border-bottom: solid $dark 2px;
+    outline: none;
+  }
+}
+
+button {
+  border-radius: none;
+  border: none;
+  padding: 12px 18px;
+  color: white;
+  margin-right: 16px;
+
+  &:hover {
+    background-color: $light;
+  }
+
+  &:focus,
+  &:active {
+    background-color: $light;
+    outline: none;
+  }
+}
+
+.gold {
+  background-color: $gold;
+}
+
+.dark {
+  background-color: $dark;
+}
