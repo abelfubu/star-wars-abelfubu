@@ -4,7 +4,12 @@
 html,
 body {
   font-family: "Darker Grotesque", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 input {
   display: block;
   border: none;

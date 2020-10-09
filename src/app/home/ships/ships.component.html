@@ -1,1 +1,14 @@
-<p>ships works!</p>
+<div class="grid">
+  <app-ship-item
+    *ngFor="let ship of ships$ | async"
+    [ship]="ship"
+  ></app-ship-item>
+</div>
+
+<div class="pagination">
+  <button class="dark" (click)="handlePrev()" [disabled]="!prev">Prev</button>
+  <h3>{{ currentPage }}</h3>
+  <button class="dark" (click)="handleNext()" [disabled]="!next">
+    Ver más
+  </button>
+</div>

@@ -1,0 +1,26 @@
+:host {
+  cursor: pointer;
+}
+
+.grid {
+  background-color: #232323;
+}
+
+div {
+  height: 400px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  color: white;
+  overflow: hidden;
+  mix-blend-mode: luminosity;
+
+  h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 4rem;
+    text-shadow: 0 1px 1px #232323;
+  }
+}

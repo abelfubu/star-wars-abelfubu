@@ -2,9 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
+import { ShipsSingleComponent } from './ships/ships-single/ships-single.component';
 import { ShipsComponent } from './ships/ships.component';
 
-const childrenRoutes: Routes = [{ path: 'ships', component: ShipsComponent }];
+const childrenRoutes: Routes = [
+  { path: 'ships', component: ShipsComponent },
+  { path: 'ships/:id', component: ShipsSingleComponent },
+];
 
 const routes: Routes = [
   { path: '', component: HomeComponent, children: childrenRoutes },
