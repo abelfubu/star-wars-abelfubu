@@ -1,13 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ActivateShipsGuard } from '../guards/activate-ships.guard';
 
 import { HomeComponent } from './home.component';
 import { ShipsSingleComponent } from './ships/ships-single/ships-single.component';
 import { ShipsComponent } from './ships/ships.component';
 
 const childrenRoutes: Routes = [
-  { path: 'ships', component: ShipsComponent },
-  { path: 'ships/:id', component: ShipsSingleComponent },
+  {
+    path: 'ships',
+    component: ShipsComponent,
+    canActivate: [ActivateShipsGuard],
+  },
+  {
+    path: 'ships/:id',
+    component: ShipsSingleComponent,
+    canActivate: [ActivateShipsGuard],
+  },
 ];
 
 const routes: Routes = [
