@@ -11,7 +11,8 @@ export class ShipsService {
 
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<any> {
-    return this.http.get<any>(this.URL);
+  getAll(url?: string): Observable<any> {
+    if (!url) return this.http.get<any>(this.URL);
+    return this.http.get<any>(url);
   }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { pluck, map } from 'rxjs/operators';
+import { Ship } from 'src/app/models';
 import { ShipsService } from 'src/app/services/ships.service';
 
 @Component({
@@ -8,10 +10,34 @@ import { ShipsService } from 'src/app/services/ships.service';
   styleUrls: ['./ships.component.scss'],
 })
 export class ShipsComponent implements OnInit {
-  ships$: Observable<any>;
+  ships$: Observable<Ship[]>;
+  prev: string;
+  next: string;
+  currentPage = 1;
   constructor(private shipsService: ShipsService) {}
 
   ngOnInit(): void {
-    this.shipsService.getAll().subscribe((response) => console.log(response));
+    this.fetchShips();
+  }
+
+  private fetchShips(url?: string): void {
+    this.ships$ = this.shipsService.getAll(url).pipe(
+      map((response) => {
+        this.prev = response.previous;
+        this.next = response.next;
+        return response;
+      }),
+      pluck('results')
+    );
+  }
+
+  handleNext(): void {
+    this.fetchShips(this.next);
+    this.currentPage += 1;
+  }
+
+  handlePrev(): void {
+    this.fetchShips(this.prev);
+    this.currentPage -= 1;
   }
 }

@@ -1,0 +1,23 @@
+@import "../../../theme/variables";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    height: 32px;
+    padding: 32px 0;
+  }
+
+  span {
+    font-weight: 700;
+    padding: 0 16px;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    &:hover {
+      color: $gold;
+    }
+  }
+}

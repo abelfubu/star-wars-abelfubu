@@ -1,0 +1,14 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+button:last-child {
+  margin: 0;
+}
