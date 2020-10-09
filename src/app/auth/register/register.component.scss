@@ -1,0 +1,13 @@
+@import "../../../theme/variables";
+
+:host {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+
+  form {
+    width: 400px;
+    border: 0.5px solid $light;
+    padding: 64px 82px 64px 64px;
+  }
+}
